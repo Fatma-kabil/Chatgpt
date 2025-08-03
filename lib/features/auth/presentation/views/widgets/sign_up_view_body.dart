@@ -2,14 +2,17 @@ import 'package:chat_gpt_app/features/auth/data/models/social_button_data.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/login_view.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_divider.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_text_button.dart';
-import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_text_field.dart';
+import 'package:chat_gpt_app/features/auth/presentation/views/widgets/form_field.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/scoial_buttons.dart';
 import 'package:flutter/material.dart';
 
 class SignUpViewBody extends StatelessWidget {
-  const SignUpViewBody({super.key, required this.socialButtons});
+   SignUpViewBody({super.key, required this.socialButtons});
 
  final List<SocialButtonData> socialButtons;
+  final formKey = GlobalKey<FormState>();
+    final emailController = TextEditingController();
+
 
 
   @override
@@ -25,11 +28,17 @@ class SignUpViewBody extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
             ),
             SizedBox(height: 10),
-            CustomTextField(label: 'Email address'),
-
+            CustomFormField(
+              formKey: formKey,
+              emailController: emailController,
+            ),
             SizedBox(height: 20),
             CustomTextButton(
-              ontap: () {},
+               ontap: () {
+                if (formKey.currentState!.validate()) {
+                  print('Email is valid: ${emailController.text}');
+                }
+              },
               color: Colors.black,
               child: Text(
                 'Continue',

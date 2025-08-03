@@ -19,7 +19,9 @@ class CustomTextButton extends StatelessWidget {
       onTap: ontap,
       child: Container(
         width: double.infinity,
+        
         decoration: BoxDecoration(
+        
           border: Border.all(),
           borderRadius: BorderRadius.circular(30),
           color: color ?? Colors.white,
