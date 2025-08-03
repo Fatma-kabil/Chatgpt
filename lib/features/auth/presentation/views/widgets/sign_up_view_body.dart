@@ -1,19 +1,16 @@
-
 import 'package:chat_gpt_app/features/auth/data/models/social_button_data.dart';
-import 'package:chat_gpt_app/features/auth/presentation/views/sign_up_view.dart';
+import 'package:chat_gpt_app/features/auth/presentation/views/login_view.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_divider.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_text_button.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/scoial_buttons.dart';
 import 'package:flutter/material.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({
-    super.key,
-    required this.socialButtons,
-  });
+class SignUpViewBody extends StatelessWidget {
+  const SignUpViewBody({super.key, required this.socialButtons});
 
-  final List<SocialButtonData> socialButtons;
+ final List<SocialButtonData> socialButtons;
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +21,12 @@ class LoginViewBody extends StatelessWidget {
           children: [
             Image.asset('assets/images/fekra.png', height: 100),
             Text(
-              'Welcome back',
+              'Create an account',
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
             ),
             SizedBox(height: 10),
             CustomTextField(label: 'Email address'),
-      
+
             SizedBox(height: 20),
             CustomTextButton(
               ontap: () {},
@@ -43,28 +40,27 @@ class LoginViewBody extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don’t have an account?"),
+                Text("Already have an account?"),
                 InkWell(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return SignUpView();
+                          return LoginView();
                         },
                       ),
                     );
                   },
-                  child: Text(" Sign Up ", style: TextStyle(color: Colors.blue)),
+                  child: Text(" Log in", style: TextStyle(color: Colors.blue)),
                 ),
               ],
             ),
             SizedBox(height: 10),
             CustomDivider(),
-      
+
             SizedBox(height: 20),
-            SocialLoginButtons(buttons: socialButtons,),
-      
+            SocialLoginButtons(buttons: socialButtons),
           ],
         ),
       ),
