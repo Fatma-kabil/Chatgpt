@@ -104,3 +104,7 @@ class CacheFailure extends Failure {
 class UnexpectedFailure extends Failure {
   const UnexpectedFailure(super.message);
 }
+
+class FirestoreFailure extends Failure {
+  const FirestoreFailure(super.message);
+}
