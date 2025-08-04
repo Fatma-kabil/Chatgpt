@@ -3,7 +3,7 @@ import 'package:chat_gpt_app/features/auth/data/models/social_button_data.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/sign_up_view.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_divider.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/custom_text_button.dart';
-import 'package:chat_gpt_app/features/auth/presentation/views/widgets/form_field.dart';
+import 'package:chat_gpt_app/features/auth/presentation/views/widgets/login_form_field.dart';
 import 'package:chat_gpt_app/features/auth/presentation/views/widgets/scoial_buttons.dart';
 import 'package:flutter/material.dart';
 
@@ -16,13 +16,14 @@ class LoginViewBody extends StatelessWidget {
   final List<SocialButtonData> socialButtons;
    final formKey = GlobalKey<FormState>();
     final emailController = TextEditingController();
+    final passwoedController = TextEditingController();
 
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(top: 70, left: 20, right: 20),
+        padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
         child: Column(
           children: [
             Image.asset('assets/images/fekra.png', height: 100),
@@ -31,9 +32,10 @@ class LoginViewBody extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
             ),
             SizedBox(height: 10),
-            CustomFormField(
+            LoginFormField(
               formKey: formKey,
               emailController: emailController,
+              passwordController: passwoedController,
             ),
 
       
