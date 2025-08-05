@@ -39,6 +39,7 @@ class _LoginFormFieldState extends State<LoginFormField> {
           ),
           const SizedBox(height: 15),
           CustomTextField(
+            isSecured: true,
             label: 'Password',
             controller: widget.passwordController,
         //    keyboardType: TextInputType.,
