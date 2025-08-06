@@ -5,11 +5,7 @@ import 'package:flutter/material.dart';
 class LoginView extends StatelessWidget {
    LoginView({super.key});
   final socialButtons = [
-  SocialButtonData(
-    iconPath: 'assets/images/search.png',
-    text: 'Continue with Google',
-    onTap: () => print('Google login'),
-  ),
+  
   SocialButtonData(
     iconPath: 'assets/images/microsoft.png',
     text: 'Continue with Microsoft Account',

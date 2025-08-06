@@ -72,13 +72,13 @@ class LoginViewBody extends StatelessWidget {
                     : CustomTextButton(
                         ontap: () {
                           if (formKey.currentState!.validate()) {
-                            final User = LoginEntity(
+                            final user = LoginEntity(
                               email: emailController.text,
                               password: passwoedController.text,
                             );
                             context
                                 .read<LoginCubit>()
-                                .logInUsingEmailandPassword(User);
+                                .logInUsingEmailandPassword(user);
                           }
                         },
                         color: Colors.black,

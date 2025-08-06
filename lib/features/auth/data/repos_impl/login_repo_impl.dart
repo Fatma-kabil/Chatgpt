@@ -9,12 +9,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginRepoImpl implements LoginRepo {
   final FirebaseAuth auth =FirebaseServices.auth;
-  final GoogleSignIn googleSignIn;
-
-  LoginRepoImpl({
-    
-    required this.googleSignIn,
-  });
+  final GoogleSignIn googleSignIn=FirebaseServices.googleSignIn;
 
   @override
   Future<Either<Failure, void>> logInUsingEmailandPassword(
